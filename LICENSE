@@ -21,15 +21,5 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ---
 
-NOTICE: This project contains multiple components under different licenses:
-
-1. Vitamin Browser (Electron version) - GPL-3.0-or-later
-   Located in: vitamin-electron-development/
-
-2. Vitamin Browser (LibreWolf patches) - MPL-2.0
-   Located in: vitamin-source/, librewolf-vitamin/
-   The LibreWolf/Firefox base code is licensed under MPL-2.0.
-   Vitamin-specific additions are dual-licensed under MPL-2.0 and GPL-3.0.
-
-Both licenses are compatible. See the respective LICENSE files in each
-subdirectory for details.
+NOTICE: This project builds on LibreWolf/Firefox (MPL-2.0).
+All Vitamin Browser code is licensed under GPL-3.0-or-later.

@@ -380,6 +380,25 @@ export class VitaminPoisonChild extends JSWindowActorChild {
 
   // Check if URL is safe to click
   isUrlSafe(href) {
+    // BLOCK: Only allow http/https protocols
+    try {
+      const url = new URL(href);
+      if (url.protocol !== "http:" && url.protocol !== "https:") return false;
+      // BLOCK: Local/private network addresses
+      const hostname = url.hostname;
+      if (hostname === "localhost" ||
+          hostname === "127.0.0.1" ||
+          hostname === "::1" ||
+          hostname.startsWith("192.168.") ||
+          hostname.startsWith("10.") ||
+          hostname.startsWith("172.") ||
+          hostname.endsWith(".local")) {
+        return false;
+      }
+    } catch (e) {
+      return false; // Invalid URL
+    }
+
     const lowerHref = href.toLowerCase();
 
     // BLOCK: Download file extensions

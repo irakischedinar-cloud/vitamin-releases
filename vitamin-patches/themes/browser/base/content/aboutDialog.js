@@ -50,7 +50,6 @@ async function init(aEvent) {
     function isNewerVersion(newVersionString, oldVersionString) {
       let [oldVersion, oldRelease] = oldVersionString.replace(/^v/, "").split("-");
       let [newVersion, newRelease] = newVersionString.replace(/^v/, "").split("-");
-      console.log(oldVersionString, newVersionString)
       if (oldVersion && newVersion) {
         if (!oldRelease) oldRelease = "0";
         if (!newRelease) newRelease = "0";

@@ -1,51 +1,43 @@
-# Vitamin Browser Version Overview
+# Vitamin Browser
 
-## Current Production Version (ACTIVE)
-- **Location**: `~/librewolf/`
-- **Version**: v146.0.1-1 (Librewolf-based)
-- **Type**: Production-ready browser
-- **Status**: ✅ ACTIVE AND RUNNING
+**Supplement your search.** A privacy-focused browser based on LibreWolf with built-in data poisoning to fight tracker profiling.
 
-## Development Versions
+## What it does
 
-### Vitamin Electron Development (DEPRECATED)
-- **Location**: `vitamin-electron-development/`
-- **Type**: Electron-based development
-- **Status**: ⚠️ DEPRECATED - No longer maintained
-- **Size**: 1.9GB
+Vitamin Browser includes a "Data Poison" feature that runs fake browsing sessions in the background, generating realistic but false activity to pollute the profiles that data brokers and ad networks build about you.
 
-### Mac Build Artifacts (ARCHIVED)
-- **Location**: `vitamin-mac-build-artifacts/` 
-- **Type**: Mac-specific compilation artifacts
-- **Status**: 🔄 ARCHIVED - Mac build outputs
-- **Size**: 1.4GB (down from 6.8GB after cleanup)
+## Features
 
-### Essential Build Artifacts
-- **Location**: `essential-build-artifacts/`
-- **Type**: Preserved browser executables
-- **Status**: 🔄 ESSENTIAL FILES PRESERVED
+- Built on LibreWolf (Firefox fork) with strict privacy defaults
+- Data Poison mode: generates fake browsing sessions with human-like behavior
+- Enhanced Tracking Protection in Strict mode out of the box
+- No telemetry, no sponsored content, no pocket
 
-## Development Infrastructure
+## Install
 
-### LibreWolf Build System
-- **Location**: `librewolf-vitamin/`
-- **Type**: Firefox-based build system
-- **Status**: 🔧 BUILD INFRASTRUCTURE
+Download the latest `.deb` from [Releases](https://github.com/realvitali/vitamin-browser/releases):
 
-### Releases & Distribution
-- **Location**: `vitamin-releases/`
-- **Type**: Release management
-- **Status**: 📦 RELEASE MANAGEMENT
+```bash
+sudo dpkg -i vitamin-browser_*.deb
+```
 
-## Summary
-- **Production**: Use the browser in `~/librewolf/` (auto-starting)
-- **Development**: Focus on `librewolf-vitamin/` build system
-- **Electronic versions**: Consider removing the deprecated Electron version
-- **Space Usage**: Cleaned up from 12.6GB → 4.2GB (-67% reduction)
+## Building from source
 
-**Note**: All essential files preserved. Deprecated versions can be safely archived or removed when storage space is needed.
+Requires a LibreWolf build in `~/vitamin-deb-build/librewolf/`.
+
+```bash
+cd vitamin-source
+bash build.sh deb
+```
+
+Output: `~/vitamin-deb-build/vitamin-browser_<version>_amd64.deb`
+
+## Project structure
+
+- `vitamin-source/` - Build script, icons, and Vitamin-specific browser modules
+- `vitamin-patches/` - Theme and content patches applied to the base browser
 
 ## License
 
-Vitamin Browser is free and open-source software (FOSS) released under GPL-3.0 / MPL-2.0.
+Vitamin Browser is free and open-source software licensed under GPL-3.0.
 See [LICENSE](./LICENSE) for details.
