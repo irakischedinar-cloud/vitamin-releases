@@ -1,24 +1,36 @@
+# I REUPLOADED IT BECAUSE IT HAS NO FEDORA VERSION, NOW IT HAS!
+
+
 # Vitamin Browser
 
-**Supplement your search.** A privacy-focused browser based on LibreWolf with built-in data poisoning to fight tracker profiling.
+Vitamin Browser is a privacy-focused browser based on LibreWolf, with a built-in data-poisoning mode designed to make tracker profiles less accurate.
 
-## What it does
+## What It Does
 
-Vitamin Browser includes a "Data Poison" feature that runs fake browsing sessions in the background, generating realistic but false activity to pollute the profiles that data brokers and ad networks build about you.
+Vitamin Browser includes a **Data Poison** feature that can run fake browsing sessions in the background. These sessions generate realistic but false activity to pollute the behavior profiles built by ad networks and data brokers.
 
 ## Features
 
 - Built on LibreWolf (Firefox fork) with strict privacy defaults
-- Data Poison mode: generates fake browsing sessions with human-like behavior
-- Enhanced Tracking Protection in Strict mode out of the box
-- No telemetry, no sponsored content, no pocket
+- Data Poison mode with human-like behavior simulation
+- Enhanced Tracking Protection in Strict mode by default
+- No telemetry, no sponsored content, no Pocket
 
 ## Install
 
-Download the latest `.deb` from [Releases](https://github.com/realvitali/vitamin-browser/releases):
+Download a package from [Releases](https://github.com/realvitali/vitamin-releases/releases).
+
+### Debian/Ubuntu
 
 ```bash
 sudo dpkg -i vitamin-browser_*.deb
+sudo apt -f install
+```
+
+### Fedora
+
+```bash
+sudo dnf install ./vitamin-browser-*.x86_64.rpm
 ```
 
 ## Building from source
@@ -32,10 +44,10 @@ bash build.sh deb
 
 Output: `~/vitamin-deb-build/vitamin-browser_<version>_amd64.deb`
 
-## Project structure
+## Project Structure
 
-- `vitamin-source/` - Build script, icons, and Vitamin-specific browser modules
-- `vitamin-patches/` - Theme and content patches applied to the base browser
+- `vitamin-source/`: Build script, icons, and Vitamin-specific browser modules
+- `vitamin-patches/`: Theme and content patches applied to the base browser
 
 ## License
 
